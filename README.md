@@ -10,7 +10,7 @@
     <a href="https://packagist.org/packages/eventagile/central-schema"><img src="https://img.shields.io/packagist/dt/eventagile/central-schema.svg?style=flat-square" alt="Total Downloads"></a>
 </p>
 
-This is for EventAgile Migration and Seerder files
+Shared central database migrations and seeders for EventAgile applications.
 
 ## Installation
 
@@ -20,25 +20,16 @@ You can install the package via Composer:
 composer require eventagile/central-schema
 ```
 
-You may publish all of the package's resources at once:
+The package automatically loads its central migrations. Run them in either consuming application with:
 
 ```bash
-php artisan vendor:publish --tag="central-schema"
-```
-
-Or, you may publish each resource individually:
-
-### Publishing the Configuration File
-
-```bash
-php artisan vendor:publish --tag="central-schema-config"
-```
-
-### Publishing and Running the Migrations
-
-```bash
-php artisan vendor:publish --tag="central-schema-migrations"
 php artisan migrate
+```
+
+Seed the shared plans, roles, and permissions with:
+
+```bash
+php artisan db:seed --class="CentralSchema\\CentralSchema\\Database\\Seeders\\DatabaseSeeder"
 ```
 
 ## Usage
@@ -51,7 +42,7 @@ Thank you for considering contributing to Central Schema! Please review our [con
 
 ## Credits
 
-- [Kemal](https://github.com/eventagile)
+- [Kemal](https://github.com/corvus-project)
 - [All Contributors](../../contributors)
 
 ## License

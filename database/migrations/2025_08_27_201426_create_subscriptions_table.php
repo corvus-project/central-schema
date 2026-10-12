@@ -1,9 +1,5 @@
 <?php
 
-use App\Enums\PlanInterval;
-use App\Models\Plan;
-use App\Models\Tenant;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -35,7 +31,7 @@ return new class extends Migration
             $table->string('payment_method')->nullable(); // e.g., card, bank_transfer
             $table->string('currency')->default('usd');
             $table->decimal('amount', 10, 2)->default(0.00);
-            $table->enum('interval', array_column(PlanInterval::cases(), 'value'))->default(PlanInterval::MONTH->value); // e.g., month, year
+            $table->string('interval')->default('month');
             $table->integer('interval_count')->default(1);
             $table->string('tax_rate')->nullable();
             $table->string('coupon')->nullable();
@@ -49,7 +45,7 @@ return new class extends Migration
 
             $table->string('plan_name')->nullable();
             $table->string('plan_description')->nullable();
-            $table->foreignIdFor(Plan::class)->constrained()->onDelete('cascade');
+            $table->foreignId('plan_id')->constrained()->cascadeOnDelete();
             $table->string('plan_features')->nullable(); // JSON or comma-separated features
             $table->json('plan_limitations')->nullable(); // JSON or comma-separated limitations
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace CentralSchema\CentralSchema\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 

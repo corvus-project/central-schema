@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace CentralSchema\CentralSchema\Database\Seeders;
 
 use App\Models\Plan;
 use Illuminate\Database\Seeder;
@@ -79,7 +79,7 @@ class PlanSeeder extends Seeder
                 'name' => 'Business',
                 'slug' => 'business',
                 'description' => 'For small studios and high-volume event organizers requiring advanced tooling.',
-                'price' => 49.00,
+                'price' => 49.90,
                 'currency' => 'gbp',
                 'interval' => 'month',
                 'interval_count' => 1,

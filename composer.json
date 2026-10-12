@@ -1,13 +1,13 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "eventagile/central-schema",
-    "description": "This is for EventAgile Migration and Seerder files",
+    "description": "Shared central database schema and seeders for EventAgile applications.",
     "keywords": [
         "laravel",
         "eventagile",
         "central-schema"
     ],
-    "homepage": "https://github.com/eventagile/central-schema",
+    "homepage": "https://github.com/corvus-project/central-schema",
     "license": "MIT",
     "authors": [
         {
@@ -32,7 +32,8 @@
     },
     "autoload": {
         "psr-4": {
-            "CentralSchema\\CentralSchema\\": "src/"
+            "CentralSchema\\CentralSchema\\": "src/",
+            "CentralSchema\\CentralSchema\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
